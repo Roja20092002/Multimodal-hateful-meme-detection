@@ -22,16 +22,33 @@ The system combines:
 
 ## Architecture
 
-Text Input
-↓
-BERT Encoder
-↓
-Feature Fusion → MTL Network → Classification
+## Architecture
 
-Image Input
-↓
-CLIP / ViT Encoder
-↓
+```text
+                 +----------------+
+Text Input ----> |  BERT Encoder  |
+                 +----------------+
+                         |
+                         v
+                 +----------------+
+Image Input ---> | CLIP / ViT Enc |
+                 +----------------+
+                         |
+                         v
+                 +----------------+
+                 | Feature Fusion |
+                 +----------------+
+                         |
+                         v
+                 +----------------+
+                 |  MTL Network   |
+                 +----------------+
+                         |
+                         v
+                 +----------------+
+                 | Classification |
+                 +----------------+
+```
 
 
 ## Project Structure
